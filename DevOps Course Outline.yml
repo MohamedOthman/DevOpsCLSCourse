@@ -1,0 +1,76 @@
+DevOps Course Outline 
+  DevOps Intro 
+    - Life before DevOps 
+    - What is DevOps 
+    - SDLC 
+    - Agile intro 
+    - Infrastructure as code 
+    - Configuration Management ( Ansible )
+    - Assignments 
+        - Provide list of Infrastructure as code tools 
+        - provide yaml examples 
+        - what is canary deployment 
+        - what is green/blue deployment 
+  git 
+    - history (before git )
+    - branches
+    - git flow 
+      - git add 
+      - git commit 
+      - 
+    - merge 
+    - rebase 
+    - conflicts 
+    - Pull Request 
+    - Squash 
+    - tags 
+    - Typical git implementation in Enterprises 
+    - Practical assigment 
+  Deployment Models 
+    - Cloud Deployment 
+        - AWS Elastic Beanstalk 
+        - Azure Web 
+        - Azure Service Fabric 
+    - Green/Blue Deployment 
+    - Deployment Best Practices 
+    - Micro services Deployment 
+    - Kubernetes Deployment 
+    - Assignment 
+        - Provide most common deployment practices 
+  Cloud
+    - What is Cloud Computing 
+    - Public vs private cloud 
+    - On Premise vs Cloud (Pros and Cons )
+    - Common Cloud Concepts 
+        - Infrastructure as a service (IAAS)
+        - Platform as a service (PAAS)
+        - Software as a service (SAAS)
+    - Most required cloud services 
+    - Cloud Providers 
+      - AWS 
+        - AWS common services 
+          - VPC 
+          - EC2 
+          - S3 
+          - Lambda 
+          - RDS 
+          - Security groups 
+          - ELB 
+        - Practical example 
+          - two EC2 web servers 
+          - ELB 
+     - Azure 
+        - Resource groups 
+        - Subscriptions and Tenants 
+        - Storage types 
+        - Current DB Services 
+  Terraform 
+    - Introduction to Terraform 
+    - Terraform architecture 
+    - Providers 
+    - Resource Dependency 
+    - Input Variables 
+    - Output Variables 
+    - Practical assignment
+  
+    
