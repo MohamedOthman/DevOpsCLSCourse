@@ -1,0 +1,101 @@
+DevOps Course Outline 
+  DevOps Intro 
+    - Life before DevOps 
+    - What is DevOps 
+    - SDLC 
+    - Agile intro 
+    - Infrastructure as code 
+    - Configuration Management ( Ansible )
+    - Assignments 
+        - Provide list of Infrastructure as code tools 
+        - provide yaml examples 
+        - what is canary deployment 
+        - what is green/blue deployment 
+  git 
+    - history - before git VCS 
+      - VCS , DVCS 
+      - Linux community and BitKeeper 
+    - Difference between git and vcs 
+      - files vs snapshots 
+      - remote vs local 
+    - providers (github , gitlab , bitbucket , azure devops (TFS))
+    - branches
+    - git flow 
+      - git add 
+      - git commit 
+    - merge vs rebase 
+    - conflicts 
+    - Pull Request 
+    - tags 
+    - git ignore file 
+    - git common authentication ( https , ssh )
+    - Typical git implementation in Enterprises
+    - git submodule 
+    - Practical assigment
+        - git repo 
+            - use this course repo to be our repository 
+            - 2 branches , master & assigments
+            - select 1 protected ( master ) ==> Zein 
+            - push assignment to assigments branch for our assignments 
+            - create pull request to master 
+            - add stash and squash trials 
+            - add submodules to our git repo ==> Ghada 
+            - add the same repo to 
+                - gitlab ==> Zein 
+                - azure TFS ==> Amr 
+                - research for alternatives and create for one of them ==> Ghada 
+  Deployment Models 
+    - Cloud Deployment 
+        - AWS Elastic Beanstalk 
+        - Azure Web 
+        - Azure Service Fabric 
+    - On Prem Deployment 
+        - OpenStack 
+        - Open Shift 
+    - Green/Blue Deployment 
+#    - Micro services (docker) Deployment 
+#    - Kubernetes Deployment 
+    - Hybrid Deployment
+    - Deployment Best Practices 
+    - Assignment 
+        - Provide most common deployment practices 
+  Cloud
+    - What is Cloud Computing 
+    - Public vs private cloud 
+    - On Premise vs Cloud (Pros and Cons )
+    - Common Cloud Concepts 
+        - Infrastructure as a service (IAAS)
+        - Platform as a service (PAAS)
+        - Software as a service (SAAS)
+    - Most Common cloud services 
+    - Cloud Providers 
+      - AWS 
+        - AWS common services 
+          - VPC 
+          - EC2 
+          - S3 
+          - Lambda 
+          - RDS 
+          - Security groups 
+          - ELB 
+          - IAM 
+        - Practical example 
+          - two EC2 web servers 
+          - ELB 
+     - Azure 
+        - Resource groups 
+        - Subscriptions and Tenants 
+        - Storage types 
+        - Current DB Services
+        - Azure AD 
+    Infra as code 
+     - Terraform 
+        - Introduction to Terraform 
+        - Terraform architecture 
+        - Providers 
+        - Resource Dependency 
+        - Input Variables 
+        - Output Variables 
+        - Practical assignment  
+     - AWS Cloud Formation 
+     - Azure ARM 

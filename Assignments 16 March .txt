@@ -1,0 +1,7 @@
+Infra As A Code 
+	- hisotry of Infra
+	- Machine readable files 
+	- Examples 
+		- Azure ARM 
+		- Terraform 
+		- AWS CloudFormation 

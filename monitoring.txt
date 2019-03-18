@@ -1,0 +1,21 @@
+Monitoring
+  - performance of application
+	- APM ( NewRelic , Appdynamics , ) ==> assignment get alternatives 
+  - logs 
+	- Splunk , SumoLogic , ELK , .. 
+  - infra 
+	- network 
+		- Network latency
+		- Network Traffic 
+		- Number of requests 
+	- servers 
+		- IOPS 
+		- Memory 
+		- CPU 
+		- Disk Space 
+	- Back Ends (DB , Messaging , ... )
+  - Security Monitoring 
+	- DDOS
+  - WebSite Availability 
+	- PingDom 
+	- Synthetics 
