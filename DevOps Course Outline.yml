@@ -12,29 +12,51 @@ DevOps Course Outline
         - what is canary deployment 
         - what is green/blue deployment 
   git 
-    - history (before git )
+    - history - before git VCS 
+      - VCS , DVCS 
+      - Linux community and BitKeeper 
+    - Difference between git and vcs 
+      - files vs snapshots 
+      - remote vs local 
+    - providers (github , gitlab , bitbucket , azure devops (TFS))
     - branches
     - git flow 
       - git add 
       - git commit 
-      - 
-    - merge 
-    - rebase 
+    - merge vs rebase 
     - conflicts 
     - Pull Request 
-    - Squash 
     - tags 
-    - Typical git implementation in Enterprises 
-    - Practical assigment 
+    - git ignore file 
+    - git common authentication ( https , ssh )
+    - Typical git implementation in Enterprises
+    - git submodule 
+    - Practical assigment
+        - git repo 
+            - use this course repo to be our repository 
+            - 2 branches , master & assigments
+            - select 1 protected ( master ) ==> Zein 
+            - push assignment to assigments branch for our assignments 
+            - create pull request to master 
+            - add stash and squash trials 
+            - add submodules to our git repo ==> Ghada 
+            - add the same repo to 
+                - gitlab ==> Zein 
+                - azure TFS ==> Amr 
+                - research for alternatives and create for one of them ==> Ghada 
   Deployment Models 
     - Cloud Deployment 
         - AWS Elastic Beanstalk 
         - Azure Web 
         - Azure Service Fabric 
+    - On Prem Deployment 
+        - OpenStack 
+        - Open Shift 
     - Green/Blue Deployment 
+#    - Micro services (docker) Deployment 
+#    - Kubernetes Deployment 
+    - Hybrid Deployment
     - Deployment Best Practices 
-    - Micro services Deployment 
-    - Kubernetes Deployment 
     - Assignment 
         - Provide most common deployment practices 
   Cloud
@@ -45,7 +67,14 @@ DevOps Course Outline
         - Infrastructure as a service (IAAS)
         - Platform as a service (PAAS)
         - Software as a service (SAAS)
-    - Most required cloud services 
+    - Most Common cloud services 
+        - Compute 
+        - Storage 
+        - NW 
+        - DNS 
+        - LB 
+        - DB 
+        - Security 
     - Cloud Providers 
       - AWS 
         - AWS common services 
@@ -54,8 +83,10 @@ DevOps Course Outline
           - S3 
           - Lambda 
           - RDS 
+          - Dynamo 
           - Security groups 
           - ELB 
+          - IAM 
         - Practical example 
           - two EC2 web servers 
           - ELB 
@@ -63,14 +94,16 @@ DevOps Course Outline
         - Resource groups 
         - Subscriptions and Tenants 
         - Storage types 
-        - Current DB Services 
-  Terraform 
-    - Introduction to Terraform 
-    - Terraform architecture 
-    - Providers 
-    - Resource Dependency 
-    - Input Variables 
-    - Output Variables 
-    - Practical assignment
-  
-    
+        - Current DB Services
+        - Azure AD 
+    Infra as code 
+     - Terraform 
+        - Introduction to Terraform 
+        - Terraform architecture 
+        - Providers 
+        - Resource Dependency 
+        - Input Variables 
+        - Output Variables 
+        - Practical assignment  
+     - AWS Cloud Formation 
+     - Azure ARM 
