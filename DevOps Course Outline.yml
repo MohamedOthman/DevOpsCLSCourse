@@ -68,6 +68,13 @@ DevOps Course Outline
         - Platform as a service (PAAS)
         - Software as a service (SAAS)
     - Most Common cloud services 
+        - Compute 
+        - Storage 
+        - NW 
+        - DNS 
+        - LB 
+        - DB 
+        - Security 
     - Cloud Providers 
       - AWS 
         - AWS common services 
@@ -76,6 +83,7 @@ DevOps Course Outline
           - S3 
           - Lambda 
           - RDS 
+          - Dynamo 
           - Security groups 
           - ELB 
           - IAM 
