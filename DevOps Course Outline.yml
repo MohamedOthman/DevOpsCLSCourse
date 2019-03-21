@@ -108,22 +108,22 @@ DevOps Course Outline
      - AWS Cloud Formation 
      - Azure ARM 
   
-Continuous Integration
-  - Introduction To Continuous Integration
-  - Introduction To Jenkins
-  - Jenkins Jobs & Job Types
-  - Job Triggers
-  - Build Environment
-  - Running Tests
-  - Pipeline As A Code
-  - Jenkins Demo
+  Continuous Integration
+    - Introduction To Continuous Integration
+    - Introduction To Jenkins
+    - Jenkins Jobs & Job Types
+    - Job Triggers
+    - Build Environment
+    - Running Tests
+    - Pipeline As A Code
+    - Jenkins Demo
 
-Containerization
-  - Introduction To Containerization
-  - Introduction To Docker
-  - Docker Architecture
-  - Docker Images
-  - Docker Volumes
-  - Docker Networking
-  - Docker Hub
-  - Docker Compose
+  Containerization
+    - Introduction To Containerization
+    - Introduction To Docker
+    - Docker Architecture
+    - Docker Images
+    - Docker Volumes
+    - Docker Networking
+    - Docker Hub
+    - Docker Compose
