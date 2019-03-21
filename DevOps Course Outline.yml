@@ -94,9 +94,18 @@ DevOps Course Outline
         - Resource groups 
         - Subscriptions and Tenants 
         - Storage types 
-        - Current DB Services
-        - Azure AD 
-    Infra as code 
+        - Common DB Services
+        - Common Map between Azure and AWS Services 
+          - Azure AD ==> AWS IAM 
+          - VNet ==> AWS VPC 
+          - VM ==> AWS EC2 
+          - DB Services ==> AWS RDS 
+          - Cosmos ==> AWS Dynamo 
+        - Practical example 
+          - two EC2 web servers 
+          - LoadBalancer 
+
+  Infra as code 
      - Terraform 
         - Introduction to Terraform 
         - Terraform architecture 
@@ -106,12 +115,21 @@ DevOps Course Outline
         - Output Variables 
         - Practical assignment  
      - AWS Cloud Formation 
+       - what is AWS CloudFormation 
+       - AWS Cloud Formation implementation sample 
      - Azure ARM 
+       - what is Azure ARM 
+       - Azure ARM implementation sample 
   
   Continuous Integration
     - Introduction To Continuous Integration
+    - CI/CD walkthrough 
+    - Most used CICD tools 
+    - git and CICD integration 
     - Introduction To Jenkins
     - Jenkins Jobs & Job Types
+      - free style 
+      - pipeline jobs 
     - Job Triggers
     - Build Environment
     - Running Tests
