@@ -138,6 +138,7 @@ DevOps Course Outline
 
   Containerization
     - Introduction To Containerization
+    - Docker vs VMs 
     - Introduction To Docker
     - Docker Architecture
     - Docker Images
