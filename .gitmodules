@@ -1,0 +1,3 @@
+[submodule "intro-to-terraform"]
+	path = intro-to-terraform
+	url = https://github.com/gruntwork-io/intro-to-terraform.git
