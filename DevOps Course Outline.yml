@@ -59,6 +59,7 @@ DevOps Course Outline
     - Deployment Best Practices 
     - Assignment 
         - Provide most common deployment practices 
+        
   Cloud
     - What is Cloud Computing 
     - Public vs private cloud 
@@ -76,17 +77,43 @@ DevOps Course Outline
         - DB 
         - Security 
     - Cloud Providers 
-      - AWS 
+      - AWS
+        - AWS regions and AZs 
         - AWS common services 
-          - VPC 
-          - EC2 
-          - S3 
-          - Lambda 
-          - RDS 
-          - Dynamo 
-          - Security groups 
-          - ELB 
           - IAM 
+            - users , groups 
+            - policies against roles 
+            - API keys 
+          - VPC 
+            - NACLs 
+            - Subnets 
+            - Security groups 
+          - EC2 
+            - What is Shared Responsibity Model
+            - EC2 types 
+          - S3 
+            -  Standard , RRS , Glacier 
+          - Lambda 
+            - supported languages 
+            - practical examples 
+          - RDS 
+            - RDS Types
+              - Aurora 
+              - Mysql 
+              - Oracle 
+              - SQL Server 
+              - RDS HA and Read Replicas 
+          - Dynamo DB 
+          - DNS 
+            - Route 53 
+            - CDN 
+          - ELB 
+            - ELB types 
+              - Classic , application , network 
+           - High Availabity and scaling architectures in the cloud 
+            - Multi region architecture 
+            - Multi AZ architecture 
+            - Auto scaling groups 
         - Practical example 
           - two EC2 web servers 
           - ELB 
@@ -95,6 +122,7 @@ DevOps Course Outline
         - Subscriptions and Tenants 
         - Storage types 
         - Common DB Services
+        - Azure dashboard walk through 
         - Common Map between Azure and AWS Services 
           - Azure AD ==> AWS IAM 
           - VNet ==> AWS VPC 
@@ -104,7 +132,8 @@ DevOps Course Outline
         - Practical example 
           - two EC2 web servers 
           - LoadBalancer 
-
+    - Do we need GCP ? 
+    
   Infra as code 
      - Terraform 
         - Introduction to Terraform 
