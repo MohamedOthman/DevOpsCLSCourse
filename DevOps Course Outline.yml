@@ -172,11 +172,35 @@ DevOps Course Outline
        - Azure ARM implementation sample 
   
   Continuous Integration
-    - Introduction To Continuous Integration
     - CI/CD walkthrough 
+      - CI 
+        - Build 
+        - Unit tests 
+        - Integration tests
+        - Code coverage 
+        - Artifact publishing 
+      - CD 
+        - Code Deployment 
+        - Regression tests 
+        - Performance tests 
+        - Acceptance tests 
+        - Code promotion 
+        - Release 
     - Most used CICD tools 
+      - CloudBees Jenkins 
+      - Gitlab 
+      - Attlasian Bamboo 
+      - Azure DevOps 
+      - Circle CI 
+      - Travis 
+      - ... 
     - git and CICD integration 
+      - Branching strategy 
+      - PR restrictions 
+    - Azure DevOps demo and implementations 
     - Introduction To Jenkins
+      - History 
+      - Why jenkins 
     - Jenkins Jobs & Job Types
       - free style 
       - pipeline jobs 
