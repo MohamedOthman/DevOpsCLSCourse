@@ -140,9 +140,30 @@ DevOps Course Outline
         - Terraform architecture 
         - Providers 
         - Resource Dependency 
+          - implicit dependency 
+          - explicit dependency (depends_on)
+        - Terraform main commands
+          - init 
+          - plan 
+          - apply 
+          - destroy 
+        - Provisioners
+          - Connection info 
+          - Tainted Resources 
+          - Destroy Provisioners
         - Input Variables 
+          - Regular variables 
+          - Lists 
+          - Maps 
         - Output Variables 
-        - Practical assignment  
+          - Add output 
+          - Query output 
+          - Integration 
+        - Modules 
+          - Terraform Registry 
+        - Practical assignment 
+          - azure vm creation 
+          - aws vm creation 
      - AWS Cloud Formation 
        - what is AWS CloudFormation 
        - AWS Cloud Formation implementation sample 
