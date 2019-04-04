@@ -1,0 +1,51 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmCount": {
+      "value": 1
+    },
+    "vmName": {
+      "value": ""
+    },
+    "vmDnsName": {
+      "value": ""
+    },
+    "vmAdminUserName": {
+      "value": ""
+    },
+    "vmAdminPassword": {
+      "value": ""
+    },
+    "vmSizePrimary": {
+      "value": ""
+    },
+    "vmSizeReserves": {
+      "value": ""
+    },
+    "vmVisualStudioVersion": {
+      "value": "2016-Datacenter-with-Containers"
+    },
+    "vstsAccount": {
+      "value": "cleanslate"
+    },
+    "vstsPersonalAccessToken": {
+      "value": ""
+    },
+    "vstsPoolName": {
+      "value": "EMR-Pipeline"
+    },
+    "vstsAgentCount": {
+      "value": 1
+    },
+    "vnetResourceGroup": {
+      "value": "EMR-CI-RG"
+    },
+    "vnetName": {
+      "value": "emrci-vnet"
+    },
+    "subnetName": {
+      "value": "emrci-subnet"
+    }
+  }
+}

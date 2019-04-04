@@ -1,0 +1,311 @@
+﻿{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmCount": {
+      "type": "int",
+      "defaultValue": 1
+    },
+    "vmName": {
+      "type": "string",
+      "metadata": {
+        "description": "Local name for the VM can be whatever you want"
+      }
+    },
+    "vmDnsName": {
+      "type": "string",
+      "metadata": {
+        "description": "Globally unique name for per region for the public IP address. For instance, myVMuniqueIP.westus.cloudapp.azure.com. It must conform to the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$."
+      }
+    },
+    "vmAdminUserName": {
+      "type": "string",
+      "metadata": {
+        "description": "VM admin user name"
+      }
+    },
+    "vmAdminPassword": {
+      "type": "securestring",
+      "metadata": {
+        "description": "VM admin password. The supplied password must be between 8-123 characters long and must satisfy at least 3 of password complexity requirements from the following: 1) Contains an uppercase character 2) Contains a lowercase character 3) Contains a numeric digit 4) Contains a special character."
+      }
+    },
+    "vmSizePrimary": {
+      "type": "string",
+      "metadata": {
+        "description": "Desired Size of the Primary VM. Any valid option accepted but if you choose premium storage type you must choose a DS class VM size."
+      },
+      "defaultValue": "Standard_DS3"
+    },
+    "vmSizeReserves": {
+      "type": "string",
+      "metadata": {
+        "description": "Desired Size of Reserve VMs. Any valid option accepted but if you choose premium storage type you must choose a DS class VM size."
+      },
+      "defaultValue": "Standard_DS2"
+    },
+    "vmStorageType": {
+      "type": "string",
+      "defaultValue": "Premium_LRS",
+      "allowedValues": [
+        "Premium_LRS",
+        "Standard_LRS"
+      ],
+      "metadata": {
+        "description": "Which type of storage you want to use"
+      }
+    },
+    "vmVisualStudioVersion": {
+      "type": "string",
+      "defaultValue": "VS-2017-Comm-WS2016",
+      "allowedValues": [
+        "VS-2013-Comm-VSU5-AzureSDK-295-WS2012R2",
+        "VS-2013-Prem-VSU5-AzureSDK-295-WS2012R2",
+        "VS-2013-Ult-VSU5-AzureSDK-295-WS2012R2",
+        "VS-2015-Comm-AzureSDK-2.9-W10T-Win10-N",
+        "VS-2015-Comm-AzureSDK-2.9-WS2012R2",
+        "VS-2015-Comm-VSU3-AzureSDK-29-Win10-N",
+        "VS-2015-Comm-VSU3-AzureSDK-291-Win10-N",
+        "VS-2015-Comm-VSU3-AzureSDK-291-WS2012R2",
+        "VS-2015-Ent-AzureSDK-2.9-WS2012R2",
+        "VS-2015-Ent-AzureSDK-29-W10T-Win10-N",
+        "VS-2015-Ent-VSU3-AzureSDK-29-Win10-N",
+        "VS-2015-Ent-VSU3-AzureSDK-291-WS2012R2",
+        "VS-2017-RC1-Comm-Win10-N",
+        "VS-2017-RC1-Comm-WS2012R2",
+        "VS-2017-RC1-Ent-Win10-N",
+        "VS-2017-RC1-Ent-WS2012R2",
+        "VS-2017-Ent-WS2016",
+        "VS-2017-Ent-v152-Win10-N",
+        "VS-2017-Comm-WS2016",
+        "VS-2017-Ent-Latest-Preview-WS2016",
+		"2016-Datacenter-with-Containers"
+      ],
+      "metadata": {
+        "description": "Which version of Visual Studio you would like to deploy"
+      }
+    },
+    "vstsAccount": {
+      "type": "string",
+      "metadata": {
+        "description": "The Visual Studio Team Services account name, that is, the first part of your VSTSAccount.visualstudio.com"
+      }
+    },
+    "vstsPersonalAccessToken": {
+      "type": "securestring",
+      "metadata": {
+        "description": "The personal access token to connect to VSTS"
+      }
+    },
+    "vstsPoolName": {
+      "type": "string",
+      "defaultValue": "Default",
+      "metadata": {
+        "description": "The Visual Studio Team Services build agent pool for this build agent to join. Use 'Default' if you don't have a separate pool."
+      }
+    },
+    "vstsAgentCount": {
+      "type": "int",
+      "defaultValue": "Default",
+      "metadata": {
+        "description": "Number of agents"
+      }
+    },
+    "vnetResourceGroup": {
+      "type": "string"
+    },
+    "vnetName": {
+      "type": "string"
+    },
+    "subnetName": {
+      "type": "string"
+    },
+    "_artifactsLocation": {
+      "type": "string",
+      "metadata": {
+        "description": "The base URI where artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and this value will be automatically generated."
+      },
+      "defaultValue": ""
+    },
+    "_artifactsLocationSasToken": {
+      "type": "securestring",
+      "metadata": {
+        "description": "Auto-generated token to access _artifactsLocation"
+      },
+      "defaultValue": ""
+    }
+  },
+  "variables": {
+    "vmImagePublisher": "MicrosoftWindowsServer",
+    "vmImageOffer": "WindowsServer",
+    "vmOSDiskName": "VMOSDisk",
+    "vmVnetID": "[resourceId(parameters('vnetResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('vNetName'))]",
+    "vmSubnetRef": "[concat(variables('vmVnetID'), '/subnets/', parameters('subnetName'))]",
+    "vmStorageAccountContainerName": "vhds"
+  },
+  "resources": [
+    {
+      "name": "[concat(parameters('vmName'), '0', copyIndex(1),'strg')]",
+      "type": "Microsoft.Storage/storageAccounts",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "2015-05-01-preview",
+      "copy": {
+        "name": "devopStorageCopy",
+        "count": "[parameters('vmCount')]"
+      },
+      "dependsOn": [],
+      "tags": {
+        "displayName": "buildVmStorage"
+      },
+      "properties": {
+        "accountType": "[parameters('vmStorageType')]"
+      }
+    },
+    {
+      "name": "[concat(parameters('vmName'), '0', copyIndex(1),'-pip')]",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "2015-05-01-preview",
+      "copy": {
+        "name": "devopServerCopy",
+        "count": "[parameters('vmCount')]"
+      },
+      "dependsOn": [],
+      "tags": {
+        "displayName": "buildVmPublicIp"
+      },
+      "properties": {
+        "publicIPAllocationMethod": "Dynamic",
+        "dnsSettings": {
+          "domainNameLabel": "[concat(parameters('vmDnsName'), '0',copyIndex(1))]"
+        }
+      }
+    },
+	{
+      "apiVersion": "2015-05-01-preview",
+      "type": "Microsoft.Network/virtualNetworks",
+      "name": "[parameters('vnetName')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "addressSpace": { "addressPrefixes": [ "10.0.0.0/16" ] },
+        "subnets": [
+          {
+            "name": "[parameters('subnetName')]",
+            "properties": { "addressPrefix": "10.0.0.0/24" }
+          }
+        ]
+      }
+    },
+    {
+      "name": "[concat(parameters('vmName'), '0', copyIndex(1),'-nic')]",
+      "type": "Microsoft.Network/networkInterfaces",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "2015-05-01-preview",
+      "copy": {
+        "name": "devopServerCopy",
+        "count": "[parameters('vmCount')]"
+      },
+      "dependsOn": [
+        "[concat('Microsoft.Network/publicIPAddresses/', concat(parameters('vmName'), '0', copyIndex(1),'-pip'))]"
+      ],
+      "tags": {
+        "displayName": "buildVmNic"
+      },
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "subnet": {
+                "id": "[variables('vmSubnetRef')]"
+              },
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', concat(parameters('vmName'), '0', copyIndex(1),'-pip'))]"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "[concat(parameters('vmName'), '0', copyIndex(1),'-vm')]",
+      "type": "Microsoft.Compute/virtualMachines",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "2015-05-01-preview",
+      "copy": {
+        "name": "cibuildagent",
+        "count": "[parameters('vmCount')]"
+      },
+      "dependsOn": [
+        "[concat('Microsoft.Storage/storageAccounts/', concat(parameters('vmName'), '0', copyIndex(1),'strg'))]",
+        "[concat('Microsoft.Network/networkInterfaces/', concat(parameters('vmName'), '0', copyIndex(1),'-nic'))]"
+      ],
+      "tags": {
+        "displayName": "buildVm"
+      },
+      "properties": {
+        "hardwareProfile": {
+          "vmSize": "[if(equals(copyIndex(1), 1), parameters('vmSizePrimary'), parameters('vmSizeReserves'))]"
+        },
+        "osProfile": {
+          "computerName": "[concat(parameters('vmName'),'0',copyIndex(1))]",
+          "adminUsername": "[parameters('vmAdminUserName')]",
+          "adminPassword": "[parameters('vmAdminPassword')]"
+        },
+        "storageProfile": {
+          "imageReference": {
+            "publisher": "[variables('vmImagePublisher')]",
+            "offer": "[variables('vmImageOffer')]",
+            "sku": "[parameters('vmVisualStudioVersion')]",
+            "version": "latest"
+          },
+          "osDisk": {
+            "name": "VMOSDisk",
+            "vhd": {
+              "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', concat(parameters('vmName'), '0', copyIndex(1),'strg')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).primaryEndpoints.blob, variables('vmStorageAccountContainerName'), '/', variables('vmOSDiskName'), '0' ,copyIndex(1), '.vhd')]"
+            },
+            "caching": "ReadWrite",
+            "createOption": "FromImage"
+          }
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(parameters('vmName'), '0', copyIndex(1),'-nic'))]"
+            }
+          ]
+        }
+      },
+      "resources": [
+        {
+          "name": "['SetupBuildServer']",
+          "type": "extensions",
+          "location": "[resourceGroup().location]",
+          "apiVersion": "2015-05-01-preview",
+          "dependsOn": [
+            "[concat('Microsoft.Compute/virtualMachines/', concat(parameters('vmName'), '0', copyIndex(1),'-vm'))]"
+          ],
+          "tags": {
+            "displayName": "SetupBuildServer"
+          },
+          "properties": {
+            "publisher": "Microsoft.Compute",
+            "type": "CustomScriptExtension",
+            "typeHandlerVersion": "1.4",
+            "settings": {
+              "fileUris": [
+                "['https://cleanslatedevopsdiag.blob.core.windows.net/cleanslatecifiles/SetupBuildServer.ps1']",
+                "['https://cleanslatedevopsdiag.blob.core.windows.net/cleanslatecifiles/choco_packages.txt']"
+              ],
+              "commandToExecute": "[concat('powershell.exe -ExecutionPolicy RemoteSigned -Command .\\SetupBuildServer.ps1 -VSTSAccount ', parameters('vstsAccount'), ' -PersonalAccessToken ', parameters('vstsPersonalAccessToken'), ' -AgentName ', parameters('vmDnsName'), '0', copyIndex(1), ' -AgentCount ', parameters('vstsAgentCount'), ' -PoolName ', parameters('vstsPoolName'))]"
+            }
+          }
+        }
+      ]
+    }
+
+  ],
+  "outputs": {
+  }
+}
