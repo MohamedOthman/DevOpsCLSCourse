@@ -59,7 +59,6 @@ DevOps Course Outline
     - Deployment Best Practices 
     - Assignment 
         - Provide most common deployment practices 
-        
   Cloud
     - What is Cloud Computing 
     - Public vs private cloud 
@@ -77,43 +76,17 @@ DevOps Course Outline
         - DB 
         - Security 
     - Cloud Providers 
-      - AWS
-        - AWS regions and AZs 
+      - AWS 
         - AWS common services 
-          - IAM 
-            - users , groups 
-            - policies against roles 
-            - API keys 
           - VPC 
-            - NACLs 
-            - Subnets 
-            - Security groups 
           - EC2 
-            - What is Shared Responsibity Model
-            - EC2 types 
           - S3 
-            -  Standard , RRS , Glacier 
           - Lambda 
-            - supported languages 
-            - practical examples 
           - RDS 
-            - RDS Types
-              - Aurora 
-              - Mysql 
-              - Oracle 
-              - SQL Server 
-              - RDS HA and Read Replicas 
-          - Dynamo DB 
-          - DNS 
-            - Route 53 
-            - CDN 
+          - Dynamo 
+          - Security groups 
           - ELB 
-            - ELB types 
-              - Classic , application , network 
-           - High Availabity and scaling architectures in the cloud 
-            - Multi region architecture 
-            - Multi AZ architecture 
-            - Auto scaling groups 
+          - IAM 
         - Practical example 
           - two EC2 web servers 
           - ELB 
@@ -122,7 +95,6 @@ DevOps Course Outline
         - Subscriptions and Tenants 
         - Storage types 
         - Common DB Services
-        - Azure dashboard walk through 
         - Common Map between Azure and AWS Services 
           - Azure AD ==> AWS IAM 
           - VNet ==> AWS VPC 
@@ -132,76 +104,29 @@ DevOps Course Outline
         - Practical example 
           - two EC2 web servers 
           - LoadBalancer 
-    - Do we need GCP ? 
-    
+
   Infra as code 
      - Terraform 
         - Introduction to Terraform 
         - Terraform architecture 
         - Providers 
         - Resource Dependency 
-          - implicit dependency 
-          - explicit dependency (depends_on)
-        - Terraform main commands
-          - init 
-          - plan 
-          - apply 
-          - destroy 
-        - Provisioners
-          - Connection info 
-          - Tainted Resources 
-          - Destroy Provisioners
         - Input Variables 
-          - Regular variables 
-          - Lists 
-          - Maps 
         - Output Variables 
-          - Add output 
-          - Query output 
-          - Integration 
-        - Modules 
-          - Terraform Registry 
-        - Practical assignment 
-          - azure vm creation 
-          - aws vm creation 
+        - Practical assignment  
      - AWS Cloud Formation 
        - what is AWS CloudFormation 
        - AWS Cloud Formation implementation sample 
      - Azure ARM 
        - what is Azure ARM 
        - Azure ARM implementation sample 
-     - which to use ? pros and cons 
   
   Continuous Integration
+    - Introduction To Continuous Integration
     - CI/CD walkthrough 
-      - CI 
-        - Build 
-        - Unit tests 
-        - Integration tests
-        - Code coverage 
-        - Artifact publishing 
-      - CD 
-        - Code Deployment 
-        - Regression tests 
-        - Performance tests 
-        - Acceptance tests 
-        - Code promotion 
-        - Release 
     - Most used CICD tools 
-      - CloudBees Jenkins 
-      - Gitlab 
-      - Attlasian Bamboo 
-      - Azure DevOps 
-      - Circle CI 
-      - Travis 
-      - ... 
     - git and CICD integration 
-      - Branching strategy 
-      - PR restrictions 
-    - Azure DevOps demo and implementations 
     - Introduction To Jenkins
-      - History 
-      - Why jenkins 
     - Jenkins Jobs & Job Types
       - free style 
       - pipeline jobs 
