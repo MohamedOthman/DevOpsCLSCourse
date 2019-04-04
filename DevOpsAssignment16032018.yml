@@ -1,0 +1,40 @@
+Assignment:
+  - APM_Alternatives:
+    - Raygun:
+      Raygun APM is a comprehensive solution that enables you to monitor the performance of your applications from one central location
+    - Scout:
+      Scout is an APM solution that provides insight into the performance of apps built on Ruby on Rails
+    - SharePath:
+      SharePath, made by Correlsense, enables you to keep track of user’s experience across devices, down to the most granular level
+    - AppDynamics:
+      Cisco’s AppDynamics is a powerful APM solution that helps organizations ensure their apps are working efficiently
+    - Retrace:
+      Stackify’s Retrace is an APM tool that helps developers detect bugs during development and QA
+    - Dynatrace:
+      Dynatrace provides real-time insight into your entire application stack that enables you to optimize the user experience
+    - Loupe:
+      Loupe is a lightweight APM tool that can be hosted in your own data center or delivered via the cloud as a SaaS solution
+    - AlertSite:
+      SmartBear’s AlertSite is a complete APM solution that enables developers to stay on top of the health of their applications
+    - AutoPilot:
+      Nastel’s AutoPilot is a real-time, end-to-end application performance monitoring solution that works for applications built on Java and .NET
+    - Pulseway:
+      Pulseway is an APM solution that enables you to monitor the health and performance of Windows, Mac, and Linux apps all from one central interface
+    - Apteligent:
+      Recently acquired by VMware, Apteligent is an advanced APM solution that enables you to improve app performance, strengthen the user experience, and uncover business insights you otherwise might have missed
+    - SteelCentral:
+      SteelCentral, made by Riverbed, is an APM solution that supports Java, .NET, and Ruby on Rails
+    - Instrumental:
+      Instrumental is a full-stack APM solution that supports Docker, .NET, Java, Ruby, Python, MySQL, PostgreSQL, MongoDB, PHP, Node.js, and more
+    - Opsview:
+      Opsview Monitor is an APM tool that enables you to test applications in real time
+    - Foglight:
+      Quest Foglight, by Dell, is an APM solution that is designed for medium-sized businesses and large enterprises
+    - LogicMonitor:
+      LogicMonitor is an end-to-end APM solution that enables you to keep your finger on the pulse of critical business applications by ensuring they are working properly at all times
+    - SiteScope:
+      Micro Focus SiteScope, made by HPE, is an agentless APM service that enables teams to identify problems faster and accelerate MTTR, thereby delivering stronger user experiences
+    - New Relic APM:
+      New Relic APM provides a complete view of your tech stack and application health. The solution supports several languages, including NET, Java, Ruby, Python, Node.js, Go, and PHP
+    - Datadog:
+      Datadog enables you to monitor, troubleshoot, and optimize application performance of cloud-based applications all the way down to a single line of code or unique customer request
