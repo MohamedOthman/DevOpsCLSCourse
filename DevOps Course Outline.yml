@@ -114,25 +114,45 @@ DevOps Course Outline
         - Input Variables 
         - Output Variables 
         - Practical assignment  
-     - AWS Cloud Formation 
-       - what is AWS CloudFormation 
-       - AWS Cloud Formation implementation sample 
      - Azure ARM 
        - what is Azure ARM 
        - Azure ARM implementation sample 
   
   Continuous Integration
     - Introduction To Continuous Integration
-    - CI/CD walkthrough 
+      - What is CI 
+      - Before CI 
+    - CI/CD walkthrough
+      - CI 
+        - Running build 
+        - Running Tests (Unit , Integrations , .. )
+        - Code Coverage 
+        - Publishing artifacts 
+        - What else ?? 
+      - CD 
+        - Running Deployment 
+        - Running Tests 
+        - Code Promotion 
     - Most used CICD tools 
+      - Gitlab 
+      - Circle CI 
+      - Bamboo
+      - Azure DevOps 
+      - What else ?? 
     - git and CICD integration 
+      - Branch Strategy 
+      - Tags 
     - Introduction To Jenkins
+      - History 
+      - 
     - Jenkins Jobs & Job Types
       - free style 
       - pipeline jobs 
     - Job Triggers
     - Build Environment
     - Running Tests
+    - Master agent architecture 
+      - Agent types 
     - Pipeline As A Code
     - Jenkins Demo
 
