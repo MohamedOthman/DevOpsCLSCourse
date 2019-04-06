@@ -111,12 +111,15 @@ DevOps Course Outline
         - Terraform architecture 
         - Providers 
         - Resource Dependency 
+          - implicit and explicit 
         - Input Variables 
         - Output Variables 
-        - Practical assignment  
+        - Integration with CM Tools 
+        - Demo  
      - Azure ARM 
        - what is Azure ARM 
        - Azure ARM implementation sample 
+       - Demo 
   
   Continuous Integration
     - Introduction To Continuous Integration
