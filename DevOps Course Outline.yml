@@ -167,13 +167,14 @@ DevOps Course Outline
     - Docker vs VMs 
     - Introduction To Docker
     - Docker Architecture
-    - Docker Images
+    - Docker Images ( how to build docker image ) 
+    - Docker Files
     - Docker Volumes
     - Docker Networking
       - port forwarding 
       - network interfaces 
     - Docker Hub
     - Docker Compose
-    - Docker logs 
+    - Docker logs
     - Docker on windows 
     - Running Linux Docker on windows 
