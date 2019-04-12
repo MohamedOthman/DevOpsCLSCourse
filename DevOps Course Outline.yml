@@ -150,13 +150,12 @@ DevOps Course Outline
       - Tags 
     - Introduction To Jenkins
       - History 
-      - 
     - Jenkins Jobs & Job Types
       - free style 
       - pipeline jobs 
     - Job Triggers
     - Build Environment
-    - Running Tests
+    - Web Hooks
     - Security Concerns with CICD 
     - Master agent architecture 
       - Agent types 
