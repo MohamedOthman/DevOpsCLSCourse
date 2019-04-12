@@ -157,6 +157,7 @@ DevOps Course Outline
     - Job Triggers
     - Build Environment
     - Running Tests
+    - Security Concerns with CICD 
     - Master agent architecture 
       - Agent types 
     - Pipeline As A Code
