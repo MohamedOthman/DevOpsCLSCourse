@@ -170,6 +170,8 @@ DevOps Course Outline
     - Docker Images
     - Docker Volumes
     - Docker Networking
+      - port forwarding 
+      - network interfaces 
     - Docker Hub
     - Docker Compose
     - Docker logs 
