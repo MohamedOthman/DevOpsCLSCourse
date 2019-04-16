@@ -12,8 +12,8 @@
 
 
 
-variable AWS_ACCESS_KEY_ID { default = "AKIA3JDLJD2E2VV6QAOY" } 
-variable AWS_SECRET_ACCESS_KEY { default =  "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" } 
+variable AWS_ACCESS_KEY_ID { default = "" } 
+variable AWS_SECRET_ACCESS_KEY { default =  "" } 
 
 # ---------------------------------------------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
